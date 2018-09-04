@@ -1,0 +1,201 @@
+body { 
+    padding-top: 5%; 
+}
+
+.jumbotron{
+    margin-top: 15px; 
+    background-color:#f4f4f4;
+    background-size: contain;
+    background-size: cover;
+    opacity: 0.88;
+    box-shadow: 0px 1px 1px;
+}
+
+.thumbnail img{
+    width:100%;
+}
+
+.thumbnail {
+    padding: 0;
+    opacity:0.85;
+}
+
+.thumbnail .caption-full{
+    padding:10px;
+}
+
+.delete-form{
+    display:inline;
+}
+
+#bigInput{
+    height:200px;
+}
+
+textarea { 
+    resize: vertical;
+}
+
+.class{
+    color:  #4b87bc;
+    /*--/ 0052c-->*/
+}
+
+.color {
+    opacity: 1.0;
+    color:black;
+    z-index: 1;
+    position: relative;
+}
+
+#white{
+    color:black;
+}
+
+.whiteActual{
+    z-index:1;
+    color:black;
+}
+
+.black{
+    color:black;
+}
+.copyright{
+    text-align:center;
+}
+
+.paddingtop{
+    padding-top:50%;
+}
+
+/*.space{
+}*/
+
+
+.theHr{
+	border-top:1px solid white;
+	border-bottom:1px rgba(0,0,0,2);
+	color:white;
+	width:400px;
+}
+
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background-size cover allows images to take entire page */
+  background-size: cover;
+  /* background-position centers the images */
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  /* Opacity is initally 0, ie they start not at all fadedout */
+  opacity: 0;
+  z-index: -1;
+  /* imageAnimation allows for images to animate, lasts 50s, bethesamespeedBEGGINGtoEND goFOREVER */
+  animation: imageAnimation 50s linear infinite; 
+  background-image: url(https://images.unsplash.com/photo-1535025287458-e3badca98021?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=aabca54bbff0b329140561274ffcd37a&auto=format&fit=crop&w=1652&q=80);
+}
+
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  100%{
+      opacity:0.5;
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
+
+.theHr{
+	border-top:1px solid white;
+	border-bottom:1px rgba(0,0,0,2);
+	color:white;
+	width:400px;
+}
+
+.navbar-inverse {
+   background-color: #f4f4f4;
+    border-color: #E7E7E7;
+}
+
+.navbar-center {
+    text-align: center;
+    display:inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+
+#inline{
+    display: inline;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color:black;
+    
+}
+
+.navbar-inverse .navbar-brand {
+    color:black;
+    font-weight:bold;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    background-color:#337ab7;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover  {
+    color:#337ab7;
+}
+
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+    color:#337ab7;
+}
+
+.background { 
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background-size cover allows images to take entire page */
+  background-size: cover;
+  /* background-position centers the images */
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  /* Opacity is initally 0, ie they start not at all fadedout */
+  opacity: 0.40;
+  z-index: -1;
+  /* imageAnimation allows for images to animate, lasts 50s, bethesamespeedBEGGINGtoEND goFOREVER */
+  background-image: url(https://images.unsplash.com/photo-1535025287458-e3badca98021?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=aabca54bbff0b329140561274ffcd37a&auto=format&fit=crop&w=1652&q=80);
+}
+
+.text {
+    text-align:left;
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}

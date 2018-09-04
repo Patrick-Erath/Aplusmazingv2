@@ -1,0 +1,96 @@
+<% include ../partials/header %>
+    
+    <header class="jumbotron">
+        <div class="container">  
+            <h1 id="white">Welcome to A+mazing</h1>
+            <p class="color">
+                This website offers McGill tutors and students the possiblity to interact with each other without going through a third party.
+               Whether you are a student looking for some extra help, or a tutor looking for some extra cash, A+mazing has something to offer you.
+            </p>
+            <p>
+            <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add a new post! <i class="fas fa-plus-circle"></i></a> 
+            </p>
+            
+                <form action"/campgrounds" method="GET" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="search" name="search" placeholder="Search for a class...">
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </div>
+                </form>
+            
+          
+            <div class="row text-center">
+        </div>
+    </header>
+    
+    
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(function(campground){ %>
+                <div class="col-sm-12">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4 class="class"> <%= campground.class %> </h4>
+                            <h4><%= campground.name %></h4>
+                            <p class="text"> <%= campground.description %> </p>
+                        </div>
+                        <p>
+                            <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info <i class="fas fa-search-plus"></i></a>
+                        </p>
+                    </div>
+                </div>
+        <% }); %>
+    <br>
+    <br>
+    
+    <div class="col-sm-12">
+        <% if (pages && pages > 0) { %>
+            <ul class="pagination text-center">
+                <% if (current == 1) { %>
+                    <li class="disabled"><a>First</a></li>
+                <% } else { %>
+                    <li><a href="/campgrounds">First</a></li>
+                <% } %>
+     
+                <% if (current == 1) { %>
+                    <li class="disabled"><a>«</a></li>
+                <% } else { %>
+                    <li><a href="/campgrounds?page=<%= Number(current) - 1 %>">«</a></li>
+                <% } %>
+     
+            <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+                <% if (i !== 1) { %>
+                    <li class="disabled"><a>...</a></li>
+                <% } %>
+                <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                    <% if (i == current) { %>
+                        <li class="active"><a><%= i %></a></li>
+                    <% } else { %>
+                        <li><a href="/campgrounds?page=<%= i %>"><%= i %></a></li>
+                    <% } %>
+                    <% if (i == Number(current) + 4 && i < pages) { %>
+                        <li class="disabled"><a>...</a></li>
+                    <% } %>
+                <% } %>
+     
+                <% if (current == pages) { %>
+                    <li class="disabled"><a>»</a></li>
+                <% } else { %>
+                    <li><a href="/campgrounds?page=<%= Number(current) + 1 %>">»</a></li>
+                <% } %>
+         
+                <% if (current == pages) { %>
+                    <li class="disabled"><a>Last</a></li>
+                <% } else { %>
+                    <li><a href="/campgrounds?page=<%= pages %>">Last</a></li>
+                <% } %>
+            </ul>
+        <% } %>
+    </div>
+</div>
+
+<ul class="slideshow">
+        <li>
+        </li>
+</ul>
+
+<% include ../partials/footer %>

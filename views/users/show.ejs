@@ -1,0 +1,43 @@
+<% include ../partials/header %>
+
+<div class="row">
+	<div class="col-md-4">
+			<h1><%= user.firstName + " " + user.lastName %> (<%=user.username%>)</h1>
+		<div class="thumbnail">
+			<div class="caption"><a href="mailto:<%= user.email %>"><%= user.email %></a></div>
+			<div class="caption">
+			<% if(user.avatar == 1 ){ %>
+				<i class="far fa-smile-beam"></i>
+			<% } else if(user.avatar == 2){ %>
+				<i class="far fa-grin-tongue-squint"></i>
+			<% } else if(user.avatar == 3){ %>
+				<i class="far fa-grin-tongue-wink"></i>
+			<% } else if(user.avatar == 4){ %>
+				<i class="far fa-grin-stars"></i>
+			<% } else if (user.avatar == 5){ %>
+				<i class="far fa-grin-wink"></i>
+			<% } else { %>
+				<i class="far fa-grin-beam-sweat"></i>
+			<% } %>
+				<strong>About <%=user.firstName%>:</strong>
+				<p></p>
+	        	<%=user.description%>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8">
+		<h3><%= user.username %>'s listings:</h3>
+		<ul>
+		<% campgrounds.forEach(function(campground) { %>
+			<li><a href="/campgrounds/<%= campground.id %>"><%= campground.name %></a></li>
+		<% }); %>
+		</ul>
+	</div>
+</div>
+
+ <ul class="background">
+        <li>
+        </li>
+    </ul>
+
+<% include ../partials/footer %>
