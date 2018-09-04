@@ -11,8 +11,6 @@ var express         = require("express"),
     User            = require("./models/user"),
     seedDB          = require("./seeds");
 
-// might not need this
-require('dotenv').load();
 
 // requiring routes  
 var commentRoutes       = require("./routes/comments"),
