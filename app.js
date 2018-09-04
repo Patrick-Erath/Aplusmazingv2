@@ -18,7 +18,7 @@ var commentRoutes       = require("./routes/comments"),
     indexRoutes          = require("./routes/index");
 
 // prevent users from seeing the database url
-mongoose.connect("process.env.DATABASEURL");
+mongoose.connect("mongodb://patrick:erath06@ds145072.mlab.com:45072/aplusmazing");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
