@@ -17,6 +17,7 @@ var commentRoutes       = require("./routes/comments"),
     campgroundRoutes    = require("./routes/campgrounds"),
     indexRoutes          = require("./routes/index");
 
+// prevent users from seeing the database url
 mongoose.connect("process.env.DATABASEURL");
 
 app.use(bodyParser.urlencoded({extended: true}));
